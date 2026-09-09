@@ -10,7 +10,8 @@
 <meta property="og:description" content="Honest service. Cool results. Family-owned HVAC in Corpus Christi since 2018. Call (361) 452-2018.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero-team.jpg">
-<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -203,6 +204,32 @@ body.menu-open .callbar{display:none!important}
 .hero__bg .hero__vid{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;animation:none}
 .hero__photo .hero__vid{width:100%;height:100%;object-fit:cover;display:block;animation:none}
 @media(min-width:900px) and (max-width:1199px){.hero__photo .hero__vid{aspect-ratio:16/9}}
+
+/* bird + badge accents */
+.kicker__bird{height:1.9em;width:auto;margin-right:.15rem}
+.award--badge img{width:54px;height:auto;flex:none;border-radius:6px}
+.trust__item--badge img{width:34px;height:auto;flex:none;border-radius:4px}
+@media(min-width:1200px){.trust__item--badge img{width:46px}.trust__item:nth-child(5){display:flex}.trust__item:nth-child(4){display:none}}
+.club{position:relative}.club__nest{position:absolute;right:1.4rem;top:1.2rem;width:110px;height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+@media(min-width:900px){.club__nest{width:150px;right:2.2rem;top:1.6rem}}
+.ftr{position:relative;overflow:hidden}.ftr__bird{position:absolute;right:-40px;bottom:-60px;width:320px;height:auto;opacity:.06;pointer-events:none}
+
+/* brand logo marquee */
+.bmarq{overflow:hidden;margin-top:1.75rem;position:relative;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.bmarq__track{display:flex;align-items:center;gap:3.2rem;width:max-content;animation:bmarq 48s linear infinite}
+.bmarq:hover .bmarq__track{animation-play-state:paused}
+@keyframes bmarq{to{transform:translateX(-50%)}}
+.blogo{display:flex;align-items:center;justify-content:center;height:54px;flex:none}
+.blogo img{height:40px;width:auto;max-width:170px;object-fit:contain;display:block}
+@media(max-width:640px){.bmarq__track{gap:2.2rem;animation-duration:36s}.blogo img{height:32px;max-width:130px}}
+@media(prefers-reduced-motion:reduce){.bmarq__track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
+/* memberships */
+.members{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.members__label{font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem}
+.members__row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem}
+.members__row img{height:56px;width:auto;max-width:150px;object-fit:contain}
+.members__txt{font-family:var(--f-head);font-size:1.4rem;font-weight:600;color:var(--ink);letter-spacing:.04em}
+@media(max-width:640px){.members__row img{height:44px;max-width:110px}}
 
 /* dropdowns */
 .dd{position:relative;display:flex;align-items:center}
@@ -625,9 +652,9 @@ body.barvis{padding-bottom:72px}
   <div class="wrap trust__in">
     <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-badge"/></svg><span><b>Licensed &amp; insured</b>Texas lic. TACLB94626E</span></span>
     <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg><span><b>BBB A+ rated</b>Accredited since 2019</span></span>
-    <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-award"/></svg><span><b>Community&rsquo;s Choice</b>2025 winner, Corpus Christi</span></span>
+    <span class="trust__item trust__item--badge"><img src="img/cc25-badge.webp" alt="" width="360" height="448"><span><b>Community&rsquo;s Choice 2025</b>Corpus Christi winner</span></span>
     <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-user"/></svg><span><b>Family-owned</b>Women-owned, since 2018</span></span>
-    <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg><span><b>Same-day service</b>Emergency calls 24/7</span></span>
+    <span class="trust__item"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg><span><b>20+ years experience</b>Emergency calls 24/7</span></span>
   </div>
 </section>
 
@@ -736,7 +763,7 @@ body.barvis{padding-bottom:72px}
       <div class="frame__tag"><svg class="ic" viewBox="0 0 24 24"><use href="#i-badge"/></svg><span>Licensed technicians<small>Not commissioned salespeople</small></span></div>
     </div>
     <div class="rv">
-      <p class="kicker">Why Birdwell</p>
+      <p class="kicker"><img class="kicker__bird" src="img/bird.png" alt="" width="476" height="896">Why Birdwell</p>
       <h2>Trust your comfort <em>to the pros.</em></h2>
       <p class="lede">We&rsquo;re a family-owned company, and we run it the way we&rsquo;d want someone to treat our own home. That means a straight answer, a fair price, and a crew that cleans up after itself.</p>
       <ul class="ticks">
@@ -753,7 +780,7 @@ body.barvis{padding-bottom:72px}
   <div class="wrap">
     <div class="club rv">
       <div>
-        <p class="kicker">The Comfort Club</p>
+        <img class="club__nest" src="img/nest.png" alt="" width="235" height="177"><p class="kicker">The Comfort Club</p>
         <h2>Two visits a year. <em>Zero surprises.</em></h2>
         <p>Most breakdowns start as small problems nobody noticed. Comfort Club members get a spring cooling check and a fall heating check, so the little things get caught before the hottest week of the year.</p>
         <ul class="club__perks">
@@ -776,7 +803,7 @@ body.barvis{padding-bottom:72px}
 <section class="sec" id="about">
   <div class="wrap about">
     <div class="rv">
-      <p class="kicker">About us</p>
+      <p class="kicker"><img class="kicker__bird" src="img/bird.png" alt="" width="476" height="896">About us</p>
       <h2>Keeping Corpus Christi comfortable, <em>one home at a time.</em></h2>
       <p class="lede">Birdwell A/C &amp; Heating is owned and run by Jason and Tia Birdwell. Jason brings more than twenty years of hands-on HVAC experience to every job. Tia runs the office, which is why you get a real person on the phone and a text back when you have a question.</p>
       <p>We opened our doors in 2018 with a simple idea: everyone deserves comfort in their home, no matter the season or the situation. Since then we&rsquo;ve grown into a full crew of licensed technicians, earned an A+ from the Better Business Bureau, and been voted a Community&rsquo;s Choice winner by the people we work for. We&rsquo;re proud members of the United Corpus Christi Chamber of Commerce, BNI and the Padre Island Business Association.</p>
@@ -785,11 +812,11 @@ body.barvis{padding-bottom:72px}
         <div class="owner"><span class="owner__init" aria-hidden="true">TB</span><div><b>Tia Birdwell</b><span>Owner &amp; office manager</span></div></div>
       </div>
       <div class="awards">
-        <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-award"/></svg><b>Community&rsquo;s Choice</b><span>2025 winner, Corpus Christi</span></div>
+        <div class="award award--badge"><img src="img/cc25-badge.webp" alt="2025 Official Community's Choice Awards winner, Corpus Christi" width="360" height="448"><b>Community&rsquo;s Choice</b><span>2025 winner, Corpus Christi</span></div>
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg><b>Best of the Best</b><span>Caller-Times Readers&rsquo; Choice 2020</span></div>
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg><b>BBB A+ Accredited</b><span>Since 2019</span></div>
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-badge"/></svg><b>Presidents Club</b><span>Winsupply Midea, 2025</span></div>
-      </div>
+      </div><div class="members"><p class="members__label">Proud members of</p><div class="members__row"><img src="img/members/chamber.jpg" alt="United Corpus Christi Chamber of Commerce" title="United Corpus Christi Chamber of Commerce"><img src="img/members/piba.png" alt="Padre Island Business Association" title="Padre Island Business Association"><img src="img/members/southside.jpg" alt="Corpus Christi South Side Business Association" title="Corpus Christi South Side Business Association"><img src="img/members/success-circle.png" alt="South Texas Success Circle" title="South Texas Success Circle"><img src="img/members/alignable.png" alt="Highly recommended by locals on Alignable" title="Highly recommended by locals on Alignable"><span class="members__txt">BNI</span></div></div>
     </div>
     <div class="about__photos rv">
       <img class="big" src="img/crew-jason-tech.jpg" alt="Jason Birdwell and a technician beside a Birdwell service truck" width="1600" height="1068">
@@ -828,9 +855,7 @@ body.barvis{padding-bottom:72px}
       <div class="fin__card rv"><svg class="ic" viewBox="0 0 24 24"><use href="#i-card"/></svg><h3>Financing available</h3><p>Flexible payment options for qualified customers, with fast approvals, so a broken system doesn&rsquo;t mean weeks without cool air.</p></div>
       <div class="fin__card rv"><svg class="ic" viewBox="0 0 24 24"><use href="#i-therm"/></svg><h3>Every major brand</h3><p>Licensed to service all makes and models, and we&rsquo;ll recommend the equipment that fits your house and your budget.</p></div>
     </div>
-    <div class="brands rv">
-      <span class="brand">Daikin</span><span class="brand">Amana</span><span class="brand">Goodman</span><span class="brand">Carrier</span><span class="brand">Bryant</span><span class="brand">Trane</span><span class="brand">American Standard</span><span class="brand">Maytag</span><span class="brand">Midea</span><span class="brand">Honeywell</span><span class="brand">AprilAire</span><span class="brand">Reme Halo</span><span class="brand">RGF</span><span class="brand">Santa Fe</span><span class="brand">InnovAir</span><span class="brand">ArcoAire</span><span class="brand">AirQuest</span><span class="brand">Oxbox</span>
-    </div>
+    <div class="bmarq rv" aria-label="Brands we install and service"><div class="bmarq__track"><span class="blogo"><img src="img/brands/carrier.svg" alt="Carrier" loading="eager"></span><span class="blogo"><img src="img/brands/trane.png" alt="Trane" loading="eager"></span><span class="blogo"><img src="img/brands/daikin.svg" alt="Daikin" loading="eager"></span><span class="blogo"><img src="img/brands/amana.png" alt="Amana" loading="eager"></span><span class="blogo"><img src="img/brands/goodman.png" alt="Goodman" loading="eager"></span><span class="blogo"><img src="img/brands/american-standard.png" alt="American Standard" loading="eager"></span><span class="blogo"><img src="img/brands/bryant.png" alt="Bryant" loading="eager"></span><span class="blogo"><img src="img/brands/midea.jpg" alt="Midea" loading="eager"></span><span class="blogo"><img src="img/brands/honeywell.svg" alt="Honeywell" loading="eager"></span><span class="blogo"><img src="img/brands/aprilaire.webp" alt="AprilAire" loading="eager"></span><span class="blogo"><img src="img/brands/reme-halo.webp" alt="Reme Halo" loading="eager"></span><span class="blogo"><img src="img/brands/rgf.svg" alt="RGF" loading="eager"></span><span class="blogo"><img src="img/brands/santa-fe.svg" alt="Santa Fe" loading="eager"></span><span class="blogo"><img src="img/brands/iwave.png" alt="iWave" loading="eager"></span><span class="blogo"><img src="img/brands/nushield.png" alt="NuShield" loading="eager"></span><span class="blogo"><img src="img/brands/innovair.png" alt="Innovair" loading="eager"></span><span class="blogo"><img src="img/brands/arcoaire.png" alt="Arcoaire" loading="eager"></span><span class="blogo"><img src="img/brands/airquest.png" alt="AirQuest" loading="eager"></span><span class="blogo"><img src="img/brands/smartcomfort.png" alt="SmartComfort by Carrier" loading="eager"></span><span class="blogo"><img src="img/brands/fast-oem.png" alt="Fast OEM Parts" loading="eager"></span><span class="blogo"><img src="img/brands/carrier.svg" alt="Carrier" loading="eager"></span><span class="blogo"><img src="img/brands/trane.png" alt="Trane" loading="eager"></span><span class="blogo"><img src="img/brands/daikin.svg" alt="Daikin" loading="eager"></span><span class="blogo"><img src="img/brands/amana.png" alt="Amana" loading="eager"></span><span class="blogo"><img src="img/brands/goodman.png" alt="Goodman" loading="eager"></span><span class="blogo"><img src="img/brands/american-standard.png" alt="American Standard" loading="eager"></span><span class="blogo"><img src="img/brands/bryant.png" alt="Bryant" loading="eager"></span><span class="blogo"><img src="img/brands/midea.jpg" alt="Midea" loading="eager"></span><span class="blogo"><img src="img/brands/honeywell.svg" alt="Honeywell" loading="eager"></span><span class="blogo"><img src="img/brands/aprilaire.webp" alt="AprilAire" loading="eager"></span><span class="blogo"><img src="img/brands/reme-halo.webp" alt="Reme Halo" loading="eager"></span><span class="blogo"><img src="img/brands/rgf.svg" alt="RGF" loading="eager"></span><span class="blogo"><img src="img/brands/santa-fe.svg" alt="Santa Fe" loading="eager"></span><span class="blogo"><img src="img/brands/iwave.png" alt="iWave" loading="eager"></span><span class="blogo"><img src="img/brands/nushield.png" alt="NuShield" loading="eager"></span><span class="blogo"><img src="img/brands/innovair.png" alt="Innovair" loading="eager"></span><span class="blogo"><img src="img/brands/arcoaire.png" alt="Arcoaire" loading="eager"></span><span class="blogo"><img src="img/brands/airquest.png" alt="AirQuest" loading="eager"></span><span class="blogo"><img src="img/brands/smartcomfort.png" alt="SmartComfort by Carrier" loading="eager"></span><span class="blogo"><img src="img/brands/fast-oem.png" alt="Fast OEM Parts" loading="eager"></span></div></div>
   </div>
 </section>
 
@@ -910,6 +935,7 @@ body.barvis{padding-bottom:72px}
 <footer class="ftr">
   <div class="wrap ftr__in">
     <div>
+      <img class="ftr__bird" src="img/bird.png" alt="" width="476" height="896">
       <div class="ftr__logo"><img src="img/logo-white.png" alt="Birdwell A/C &amp; Heating" width="2846" height="896"></div>
       <p>Family-owned air conditioning and heating for Corpus Christi and the Coastal Bend. Honest service. Cool results.</p>
       <p><a href="https://www.facebook.com/BirdwellacandheatingCorpusChristi/" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/birdwellair_llc/" target="_blank" rel="noopener">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.google.com/maps?cid=3989139443163140499" target="_blank" rel="noopener">Google</a></p>
