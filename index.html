@@ -213,7 +213,7 @@ body.menu-open .callbar{display:none!important}
 .club__cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
 @media(max-width:640px){.club__cta{justify-content:space-between}.club__nest{width:88px;margin-left:auto;margin-top:-.4rem}}.club__nest{width:104px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
 @media(min-width:900px){.club__nest{width:124px}}
-.ftr{position:relative;overflow:hidden}.ftr__bird{position:absolute;right:-30px;bottom:-50px;width:340px;height:auto;opacity:.13;pointer-events:none}
+.contact{position:relative;overflow:hidden}.contact__bird{display:none;position:absolute;left:calc(50% - 205px);bottom:-14px;width:150px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35));pointer-events:none}@media(min-width:1100px){.contact__bird{display:block}.contact .hours{max-width:380px}}.contact__grid{position:relative}
 
 /* brand logo marquee */
 .bmarq{overflow:hidden;margin-top:1.75rem;position:relative;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
@@ -227,12 +227,12 @@ body.menu-open .callbar{display:none!important}
 @media(max-width:640px){.bmarq__track{gap:2.2rem;animation-duration:36s}.blogo img{height:32px;max-width:130px}}
 @media(prefers-reduced-motion:reduce){.bmarq__track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
 /* memberships */
-.members{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--line)}
-.members__label{font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem}
-.members__row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
-@media(min-width:640px){.members__row{grid-template-columns:repeat(6,1fr)}}
-.members__row img,.members__txt{background:#fff;border:1px solid var(--line);border-radius:12px;height:78px;width:100%;padding:.55rem .7rem;box-sizing:border-box;object-fit:contain;display:flex;align-items:center;justify-content:center}
-.members__txt{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--ink);letter-spacing:.06em}
+.members{margin-top:3rem;padding-top:2.25rem;border-top:1px solid var(--line);text-align:center}
+.members__label{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 1.25rem}
+.members__row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+@media(min-width:900px){.members__row{gap:1.1rem}.members__row img,.members__txt{height:118px;width:184px;padding:.9rem 1.1rem}.members__txt{font-size:2rem}}
+.members__row img,.members__txt{background:#fff;border:1px solid var(--line);border-radius:14px;height:92px;width:calc(33.333% - .6rem);max-width:184px;padding:.65rem .8rem;box-sizing:border-box;object-fit:contain;display:flex;align-items:center;justify-content:center}
+.members__txt{font-family:var(--f-head);font-size:1.6rem;font-weight:600;color:var(--ink);letter-spacing:.06em}
 
 /* dropdowns */
 .dd{position:relative;display:flex;align-items:center}
@@ -820,7 +820,7 @@ body.barvis{padding-bottom:72px}
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg><b>Best of the Best</b><span>Caller-Times Readers&rsquo; Choice 2020</span></div>
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg><b>BBB A+ Accredited</b><span>Since 2019</span></div>
         <div class="award"><svg class="ic" viewBox="0 0 24 24"><use href="#i-badge"/></svg><b>Presidents Club</b><span>Winsupply Midea, 2025</span></div>
-      </div><div class="members"><p class="members__label">Proud members of</p><div class="members__row"><img src="img/members/chamber.jpg" alt="United Corpus Christi Chamber of Commerce" title="United Corpus Christi Chamber of Commerce"><img src="img/members/piba.png" alt="Padre Island Business Association" title="Padre Island Business Association"><img src="img/members/southside.jpg" alt="Corpus Christi South Side Business Association" title="Corpus Christi South Side Business Association"><img src="img/members/success-circle.png" alt="South Texas Success Circle" title="South Texas Success Circle"><img src="img/members/alignable.png" alt="Highly recommended by locals on Alignable" title="Highly recommended by locals on Alignable"><span class="members__txt">BNI</span></div></div>
+      </div>
     </div>
     <div class="about__photos rv">
       <img class="big" src="img/crew-jason-tech.jpg" alt="Jason Birdwell and a technician beside a Birdwell service truck" width="1600" height="1068">
@@ -828,6 +828,7 @@ body.barvis{padding-bottom:72px}
       <img class="sm" src="img/tech-condenser.jpg" alt="A Birdwell technician servicing an outdoor condenser" width="1600" height="1068">
     </div>
   </div>
+  <div class="wrap"><div class="members"><p class="members__label">Proud members of</p><div class="members__row"><img src="img/members/chamber.jpg" alt="United Corpus Christi Chamber of Commerce" title="United Corpus Christi Chamber of Commerce"><img src="img/members/piba.png" alt="Padre Island Business Association" title="Padre Island Business Association"><img src="img/members/southside.jpg" alt="Corpus Christi South Side Business Association" title="Corpus Christi South Side Business Association"><img src="img/members/success-circle.png" alt="South Texas Success Circle" title="South Texas Success Circle"><img src="img/members/alignable.png" alt="Highly recommended by locals on Alignable" title="Highly recommended by locals on Alignable"><span class="members__txt">BNI</span></div></div></div>
 </section>
 
 <section class="sec wash" id="reviews">
@@ -892,6 +893,7 @@ body.barvis{padding-bottom:72px}
 </section>
 
 <section class="sec contact" id="contact">
+  <img class="contact__bird" src="img/bird.png" alt="" width="476" height="896">
   <div class="wrap contact__grid">
     <div class="rv">
       <p class="kicker">Get in touch</p>
@@ -939,7 +941,6 @@ body.barvis{padding-bottom:72px}
 <footer class="ftr">
   <div class="wrap ftr__in">
     <div>
-      <img class="ftr__bird" src="img/bird.png" alt="" width="476" height="896">
       <div class="ftr__logo"><img src="img/logo-white.png" alt="Birdwell A/C &amp; Heating" width="2846" height="896"></div>
       <p>Family-owned air conditioning and heating for Corpus Christi and the Coastal Bend. Honest service. Cool results.</p>
       <p><a href="https://www.facebook.com/BirdwellacandheatingCorpusChristi/" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/birdwellair_llc/" target="_blank" rel="noopener">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.google.com/maps?cid=3989139443163140499" target="_blank" rel="noopener">Google</a></p>
