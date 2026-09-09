@@ -209,10 +209,10 @@ body.menu-open .callbar{display:none!important}
 .kicker__bird{height:1.9em;width:auto;margin-right:.15rem}
 .award--badge img{width:54px;height:auto;flex:none;border-radius:6px}
 .trust__item--badge img{width:34px;height:auto;flex:none;border-radius:4px}
-@media(min-width:1200px){.trust__item--badge img{width:46px}.trust__item:nth-child(5){display:flex}.trust__item:nth-child(4){display:none}}
-.club{position:relative}.club__nest{position:absolute;right:1.4rem;top:1.2rem;width:110px;height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
-@media(min-width:900px){.club__nest{width:150px;right:2.2rem;top:1.6rem}}
-.ftr{position:relative;overflow:hidden}.ftr__bird{position:absolute;right:-40px;bottom:-60px;width:320px;height:auto;opacity:.06;pointer-events:none}
+@media(min-width:1200px){.trust__item--badge img{width:58px}.trust__item:nth-child(5){display:flex}.trust__item:nth-child(4){display:none}}
+.club__cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}.club__nest{width:104px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+@media(min-width:900px){.club__nest{width:124px}}
+.ftr{position:relative;overflow:hidden}.ftr__bird{position:absolute;right:-30px;bottom:-50px;width:340px;height:auto;opacity:.13;pointer-events:none}
 
 /* brand logo marquee */
 .bmarq{overflow:hidden;margin-top:1.75rem;position:relative;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
@@ -220,20 +220,22 @@ body.menu-open .callbar{display:none!important}
 .bmarq:hover .bmarq__track{animation-play-state:paused}
 @keyframes bmarq{to{transform:translateX(-50%)}}
 .blogo{display:flex;align-items:center;justify-content:center;height:54px;flex:none}
-.blogo img{height:40px;width:auto;max-width:170px;object-fit:contain;display:block}
+.blogo img{height:34px;width:auto;max-width:170px;object-fit:contain;display:block}
+.blogo img[src*="goodman"],.blogo img[src*="bryant"],.blogo img[src*="fast-oem"],.blogo img[src*="amana"],.blogo img[src*="arcoaire"]{height:27px}
+.blogo img[src*="trane"],.blogo img[src*="daikin"],.blogo img[src*="carrier"],.blogo img[src*="honeywell"]{height:40px}
 @media(max-width:640px){.bmarq__track{gap:2.2rem;animation-duration:36s}.blogo img{height:32px;max-width:130px}}
 @media(prefers-reduced-motion:reduce){.bmarq__track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
 /* memberships */
 .members{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--line)}
 .members__label{font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem}
-.members__row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem}
-.members__row img{height:56px;width:auto;max-width:150px;object-fit:contain}
-.members__txt{font-family:var(--f-head);font-size:1.4rem;font-weight:600;color:var(--ink);letter-spacing:.04em}
-@media(max-width:640px){.members__row img{height:44px;max-width:110px}}
+.members__row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+@media(min-width:640px){.members__row{grid-template-columns:repeat(6,1fr)}}
+.members__row img,.members__txt{background:#fff;border:1px solid var(--line);border-radius:12px;height:78px;width:100%;padding:.55rem .7rem;box-sizing:border-box;object-fit:contain;display:flex;align-items:center;justify-content:center}
+.members__txt{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--ink);letter-spacing:.06em}
 
 /* dropdowns */
 .dd{position:relative;display:flex;align-items:center}
-.dd>a::after{content:"";display:inline-block;width:.42em;height:.42em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 .22em .5em;opacity:.7}
+.dd>a{display:inline-flex;align-items:center}.dd>a::after{content:"";display:inline-block;width:.42em;height:.42em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-.15em) rotate(45deg);margin:0 0 0 .5em;opacity:.7}
 .dd__panel{position:absolute;top:100%;left:-1.2rem;padding-top:.7rem;display:none;z-index:70}
 .dd:hover .dd__panel,.dd:focus-within .dd__panel,.dd.open .dd__panel{display:block}
 .dd__box{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(11,37,64,.18);padding:1.25rem 1.4rem 1.1rem;display:grid;gap:1.4rem}
@@ -352,7 +354,7 @@ body.menu-open .callbar{display:none!important}
 .trust__item .ic{font-size:1.5rem;color:var(--blue)}
 @media(max-width:899px){.trust__item{justify-content:center;text-align:center}.trust__item:last-child{grid-column:1/-1;justify-content:center}.trust__item>span{font-size:0}.trust__item>span b{font-size:.9rem}.trust__item .ic{font-size:1.35rem}}
 .trust__item b{display:block;color:var(--ink);font-weight:700}
-@media(min-width:1200px){.trust__in{display:flex;justify-content:space-evenly;padding:1.6rem 0}.trust__item{font-size:1.15rem;gap:1rem}.trust__item .ic{font-size:2.4rem}.trust__item>span{font-size:0}.trust__item>span b{display:inline;font-weight:600;font-size:1.15rem}.trust__item:nth-child(4),.trust__item:nth-child(5){display:none}}
+@media(min-width:1200px){.trust__in{display:grid;grid-template-columns:repeat(3,1fr);padding:1.5rem 0}.trust__item{justify-content:center}.trust__item{font-size:1.15rem;gap:1rem}.trust__item .ic{font-size:2.4rem}.trust__item>span{font-size:0}.trust__item>span b{display:inline;font-weight:600;font-size:1.15rem}.trust__item:nth-child(4),.trust__item:nth-child(5){display:none}}
 
 /* services */
 .sec__head{max-width:64ch;margin-bottom:2.75rem}
@@ -780,7 +782,7 @@ body.barvis{padding-bottom:72px}
   <div class="wrap">
     <div class="club rv">
       <div>
-        <img class="club__nest" src="img/nest.png" alt="" width="235" height="177"><p class="kicker">The Comfort Club</p>
+        <p class="kicker">The Comfort Club</p>
         <h2>Two visits a year. <em>Zero surprises.</em></h2>
         <p>Most breakdowns start as small problems nobody noticed. Comfort Club members get a spring cooling check and a fall heating check, so the little things get caught before the hottest week of the year.</p>
         <ul class="club__perks">
@@ -789,7 +791,7 @@ body.barvis{padding-bottom:72px}
           <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-ccheck"/></svg>Member discounts on repairs and air quality products all year long</li>
           <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-ccheck"/></svg>Photo documentation of every inspection, emailed with your invoice</li>
         </ul>
-        <a class="btn btn--sun" href="tel:+13614522018"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Ask about the Comfort Club</a>
+        <div class="club__cta"><a class="btn btn--sun" href="tel:+13614522018"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Ask about the Comfort Club</a><img class="club__nest" src="img/nest.png" alt="" width="235" height="177"></div>
       </div>
       <div class="club__card">
         <img src="img/tech-gauges.jpg" alt="A Birdwell technician checking refrigerant pressures with gauges" width="1200" height="1200">
@@ -804,7 +806,7 @@ body.barvis{padding-bottom:72px}
   <div class="wrap about">
     <div class="rv">
       <p class="kicker"><img class="kicker__bird" src="img/bird.png" alt="" width="476" height="896">About us</p>
-      <h2>Keeping Corpus Christi comfortable, <em>one home at a time.</em></h2>
+      <h2>Keeping Corpus&nbsp;Christi comfortable, <em>one home at a time.</em></h2>
       <p class="lede">Birdwell A/C &amp; Heating is owned and run by Jason and Tia Birdwell. Jason brings more than twenty years of hands-on HVAC experience to every job. Tia runs the office, which is why you get a real person on the phone and a text back when you have a question.</p>
       <p>We opened our doors in 2018 with a simple idea: everyone deserves comfort in their home, no matter the season or the situation. Since then we&rsquo;ve grown into a full crew of licensed technicians, earned an A+ from the Better Business Bureau, and been voted a Community&rsquo;s Choice winner by the people we work for. We&rsquo;re proud members of the United Corpus Christi Chamber of Commerce, BNI and the Padre Island Business Association.</p>
       <div class="owners">
