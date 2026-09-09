@@ -279,15 +279,17 @@ body.menu-open .callbar{display:none!important}
 .hdr__in{width:calc(100% - 8vw);padding:.9rem 0}
 .hdr__logo img,.hdr .logo img{height:64px}
 .nav{gap:2.2rem}.nav a{font-size:1.05rem}
-.hdr__cta{background:none;color:var(--ink);font-size:1.2rem;padding:0}.hdr__cta:hover{background:none;color:var(--blue)}.hdr__cta .ic{font-size:1.3rem}
-.hero{min-height:0;height:clamp(560px,36.5vw,800px);display:flex;align-items:center;padding:2rem 0}
-.hero__in{position:static;display:block;width:calc(100% - 8vw)}
-.hero__copy{position:relative;z-index:2;width:30vw}
-.hero__copy>*{max-width:100%}
+.hdr__cta{background:none;color:var(--ink);font-size:1.2rem;padding:0;width:auto;height:auto}.hdr__cta:hover{background:none;color:var(--blue)}.hdr__cta .ic{font-size:1.3rem}
+.hero{min-height:660px;height:auto;display:flex;align-items:center;padding:4.5rem 0 4.5rem}
+.hero__bg{display:block}
+.hero__bg::after{background:linear-gradient(96deg,rgba(11,37,64,.94) 0%,rgba(11,37,64,.82) 36%,rgba(11,37,64,.5) 68%,rgba(11,37,64,.4) 100%)}
+.hero__in{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:4.5rem;align-items:center;width:calc(100% - 8vw);max-width:1500px;text-align:left}
+.hero__copy{position:relative;z-index:2;width:auto}
+.hero__copy>*{max-width:600px}
 .hero__eyebrow{font-size:.82rem;letter-spacing:.2em;margin-bottom:1.4rem}
 .hero__eyebrow::before{display:none}
-.hero h1{font-size:clamp(3rem,4.2vw,5.4rem);line-height:1;letter-spacing:-.025em}
-.hero__sub{font-size:clamp(1.05rem,1.3vw,1.45rem);line-height:1.5;max-width:100%;margin:1.5rem 0 1.9rem}
+.hero h1{font-size:clamp(3rem,4.4vw,5rem);line-height:1;letter-spacing:-.025em}
+.hero__sub{font-size:clamp(1.05rem,1.25vw,1.35rem);line-height:1.5;max-width:44ch;margin:1.5rem 0 1.9rem}
 .hero__btns{gap:.6rem 1.4rem}
 .hero__btns .btn--sun{font-size:1.15rem;padding:1.15rem 1.9rem}
 .hero__btns .btn--link{display:none}
@@ -298,9 +300,13 @@ body.menu-open .callbar{display:none!important}
 .hero .rating{background:none;border:0;backdrop-filter:none;padding:0;gap:.7rem}
 .rating .g{width:30px;height:30px}.rating .g svg{width:20px;height:20px}
 .rating b{font-size:1.5rem}.rating .stars .ic{font-size:1.1rem}.rating small{font-size:1.05rem;color:#fff}
-.hero__photo{position:absolute;top:0;right:0;bottom:0;width:64%;aspect-ratio:auto;border-radius:0;box-shadow:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%);mask-image:linear-gradient(to right,transparent 0,#000 7%)}
-.hero__photo img{object-position:50% 50%}
+.hero__photo{display:none}
+.hero__slot{position:relative;z-index:2}
+.hero__slot .qw__card{padding:1.6rem 1.7rem 1.2rem;border-radius:22px}
+.hero__slot .qw__step h3{font-size:1.4rem}.hero__slot .qw__opt{padding:.8rem .9rem;font-size:.95rem}.hero__slot .qw__opts{gap:.55rem;margin-top:1rem}
+.qw--moved{display:none}
 }
+@media(min-width:1600px){.hero__in{grid-template-columns:minmax(0,1fr) 500px}}
 @media(prefers-reduced-motion:reduce){.hero__photo img{animation:none}}
 
 .rating{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);border-radius:999px;padding:.5rem .95rem .5rem .7rem;color:#fff;text-decoration:none}
@@ -610,6 +616,7 @@ body.barvis{padding-bottom:72px}
       <span><svg class="ic" viewBox="0 0 24 24"><use href="#i-award"/></svg>Community&rsquo;s Choice 2025</span>
     </div>
    </div>
+   <div class="hero__slot"></div>
    <figure class="hero__photo"><video class="hero__vid" autoplay muted loop playsinline preload="metadata" poster="img/hero-team.jpg" aria-hidden="true"><source src="img/hero-loop.mp4" type="video/mp4"></video></figure>
   </div>
 </section>
@@ -1041,6 +1048,12 @@ var REVIEWS = [
 
 /* hero video: play only the visible one */
 (function(){var vs=document.querySelectorAll('.hero__vid');function sync(){vs.forEach(function(v){var vis=v.offsetParent!==null&&getComputedStyle(v.closest('.hero__bg')||v.closest('.hero__photo')).display!=='none';if(vis){v.play&&v.play().catch(function(){})}else{v.pause()}})}sync();addEventListener('resize',sync)})();
+
+
+/* quote wizard lives in the hero on desktop, under the trust bar on phones */
+(function(){var f=document.getElementById('quoteWizard'),slot=document.querySelector('.hero__slot'),home=document.querySelector('.qw__in'),sec=document.querySelector('.qw');
+function place(){if(!f||!slot)return;if(innerWidth>=1200){if(f.parentNode!==slot){slot.appendChild(f);sec.classList.add('qw--moved')}}else{if(f.parentNode!==home){home.appendChild(f);sec.classList.remove('qw--moved')}}}
+place();addEventListener('resize',place)})();
 
 /* mobile nav */
 var mb=document.getElementById('menuBtn'), mn=document.getElementById('mnav');
