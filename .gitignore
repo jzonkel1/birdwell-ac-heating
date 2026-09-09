@@ -1,0 +1,8 @@
+src/
+*.md
+*.pptx
+!files-8k2q/*.pptx
+*.pdf
+!files-8k2q/*.pdf
+_qa*.html
+prep.py
