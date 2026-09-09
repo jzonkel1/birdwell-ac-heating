@@ -211,8 +211,8 @@ body.menu-open .callbar{display:none!important}
 .trust__item--badge img{width:34px;height:auto;flex:none;border-radius:4px}
 @media(min-width:1200px){.trust__item--badge img{width:58px}.trust__item:nth-child(5){display:flex}.trust__item:nth-child(4){display:none}}
 .club__cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
-@media(max-width:640px){.club__cta{justify-content:space-between}.club__nest{width:100px;margin-left:auto;margin-top:-.4rem}}.club__nest{width:120px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
-@media(min-width:900px){.club__cta{gap:0}.club__nest{width:154px;margin:0 auto;transform:translateX(16px)}}
+.club__nest{height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35));pointer-events:none}.club__nest--m{position:absolute;top:-36px;right:1.1rem;width:98px;z-index:2}.club__nest--d{display:none}
+@media(min-width:960px){.club__nest--m{display:none}.club__nest--d{display:block;position:absolute;right:40px;top:calc(clamp(2rem,5vw,4rem) + 44px);width:124px;margin:0}}
 .contact{position:relative;overflow:hidden}.contact__bird{display:none;position:absolute;left:calc(50% - 205px);bottom:-14px;width:150px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35));pointer-events:none}@media(min-width:1100px){.contact__bird{display:block}.contact .hours{max-width:380px}}.contact__grid{position:relative}
 
 /* brand logo marquee */
@@ -404,10 +404,10 @@ body.menu-open .callbar{display:none!important}
 .ticks span{font-size:.97rem}
 
 /* comfort club */
-.club{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(2rem,5vw,4rem);display:grid;gap:2rem;grid-template-columns:1fr}
-@media(min-width:960px){.club{grid-template-columns:1.1fr .9fr;align-items:center}}
-.club::before{content:"";position:absolute;inset:0;background:radial-gradient(40rem 22rem at 100% 0%,rgba(16,118,181,.5),transparent 60%),radial-gradient(30rem 18rem at 0% 100%,rgba(253,205,70,.22),transparent 60%)}
-.club>*{position:relative}
+.club{position:relative}.club__in{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-radius:var(--r);display:grid;gap:0;grid-template-columns:1fr}.club__body{padding:clamp(2rem,5vw,4rem)}.club__photo{position:relative;margin:0;min-width:0}.club__photo img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}.club__photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:4.5rem clamp(1.4rem,3.5vw,2.25rem) 1.7rem;background:linear-gradient(180deg,rgba(7,26,47,0) 0%,rgba(7,26,47,.86) 38%,rgba(7,26,47,.97) 100%)}.club__cap-k{display:block;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE38A;margin-bottom:.45rem}.club__cap-k::before{content:"";display:inline-block;width:1.4rem;height:2px;background:var(--sun);vertical-align:middle;margin-right:.6rem}.club__photo figcaption p{font-size:.95rem;margin:0;max-width:34rem;color:#EAF2F9}
+@media(min-width:960px){.club__in{grid-template-columns:1.1fr .9fr;align-items:stretch}.club__body{align-self:center}.club__photo{min-height:100%}.club__photo img{position:absolute;inset:0;height:100%;aspect-ratio:auto}}
+.club__in::before{content:"";position:absolute;inset:0;background:radial-gradient(40rem 22rem at 100% 0%,rgba(16,118,181,.5),transparent 60%),radial-gradient(30rem 18rem at 0% 100%,rgba(253,205,70,.22),transparent 60%)}
+.club__in>*{position:relative}
 .club h2{color:#fff}
 .club h2 em{color:#FFE38A}
 .club p{color:#D9E6F1}
@@ -415,17 +415,17 @@ body.menu-open .callbar{display:none!important}
 .club__perks{list-style:none;margin:1.5rem 0 2rem;padding:0;display:grid;gap:.75rem}
 .club__perks li{display:flex;gap:.7rem;align-items:flex-start;color:#EAF2F9}
 .club__perks .ic{color:var(--sun);margin-top:.3rem}
-.club__card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:1.75rem;backdrop-filter:blur(6px)}
-.club__card img{border-radius:var(--r-sm);aspect-ratio:4/3;object-fit:cover;width:100%;margin-bottom:1.2rem}
+
+
 .club__card h3{color:#fff;font-size:1.3rem;margin-bottom:.4rem}
-.club__card p{font-size:.95rem;margin:0}
+
 
 /* about */
 .about{display:grid;gap:2.5rem;grid-template-columns:1fr;align-items:start}
 @media(max-width:899px){.about__photos{order:-1}}
 @media(min-width:960px){.about{grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}}
 .about__photos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem}
-.about>*,.about__photos>*,.split>*,.area>*,.contact__grid>*,.club>*,.svcgrid>*,.fin>*{min-width:0}
+.about>*,.about__photos>*,.split>*,.area>*,.contact__grid>*,.club__in>*,.svcgrid>*,.fin>*{min-width:0}
 .about__photos img{border-radius:var(--r-sm);object-fit:cover;width:100%;box-shadow:var(--shadow)}
 .about__photos .big{grid-column:1/-1;aspect-ratio:16/10}
 .about__photos .sm{aspect-ratio:1}
@@ -783,7 +783,9 @@ body.barvis{padding-bottom:72px}
 <section class="sec wash-2" id="club">
   <div class="wrap">
     <div class="club rv">
-      <div>
+      <img class="club__nest club__nest--m" src="img/nest.png" alt="" width="479" height="364">
+      <div class="club__in">
+      <div class="club__body">
         <p class="kicker">The Comfort Club</p>
         <h2>Two visits a year. <em>Zero surprises.</em></h2>
         <p>Most breakdowns start as small problems nobody noticed. Comfort Club members get a spring cooling check and a fall heating check, so the little things get caught before the hottest week of the year.</p>
@@ -793,12 +795,13 @@ body.barvis{padding-bottom:72px}
           <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-ccheck"/></svg>Member discounts on repairs and air quality products all year long</li>
           <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-ccheck"/></svg>Photo documentation of every inspection, emailed with your invoice</li>
         </ul>
-        <div class="club__cta"><a class="btn btn--sun" href="tel:+13614522018"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Ask about the Comfort Club</a><img class="club__nest" src="img/nest.png" alt="" width="479" height="364"></div>
+        <div class="club__cta"><a class="btn btn--sun" href="tel:+13614522018"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Ask about the Comfort Club</a></div>
+        <img class="club__nest club__nest--d" src="img/nest.png" alt="" width="479" height="364">
       </div>
-      <div class="club__card">
+      <figure class="club__photo">
         <img src="img/tech-gauges.jpg" alt="A Birdwell technician checking refrigerant pressures with gauges" width="1200" height="1200">
-        <h3>What a checkup covers</h3>
-        <p>Refrigerant pressures, electrical connections, capacitors, drain lines, coils, filters, thermostat calibration and airflow. Everything we look at, you get a picture of.</p>
+        <figcaption><span class="club__cap-k">What a checkup covers</span><p>Refrigerant pressures, electrical connections, capacitors, drain lines, coils, filters, thermostat calibration and airflow. Everything we look at, you get a picture of.</p></figcaption>
+      </figure>
       </div>
     </div>
   </div>
